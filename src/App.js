@@ -1,7 +1,7 @@
 import React, {useState}from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button,NavDropdown,Nav,Form,FormControl, Navbar,Alert,Modal} from 'react-bootstrap'
+import { Button,NavDropdown,Nav,Form,FormControl, Navbar,Alert,Modal, Row} from 'react-bootstrap'
 
 function App() {
   const [name, setName] = useState('');
@@ -27,7 +27,7 @@ function App() {
   }
 
   return (  
-    <div style={{backgroundColor:'white'}}>
+    <div style={{backgroundColor:'white',justifyContent:'center',}}>
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -49,35 +49,43 @@ function App() {
         </Form>
       </Navbar.Collapse>
     </Navbar>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <center>
-        <form onSubmit={checking} style={{justifyContent:'center', alignItems:'center', alignContent:'center',alignSelf:'center'}}>
-        <label>
-          <input type="text" value={name.value} 
-          style={{borderRadius:20,paddingLeft:13}}
-          placeholder="Username"
-          // onChange={(text) => {setName(text)}}
-          onChange={handleChange}
-          />
+      <header className="App-header" style={{flexDirection:'row'}}>
+      <Row>
+        <div style={{ backgroundColor:'white',alignItems:'center', borderTopLeftRadius:15,borderBottomLeftRadius:15, padding:5, paddingBottom:20,float:'left' ,width:450}}>
+          <center>
+          <img src={logo} className="App-logo" alt="logo" style={{marginLeft:-20}}/>
+          <form onSubmit={checking} style={{justifyContent:'center', alignItems:'center', alignContent:'center',alignSelf:'center'}}>
+          <label>
+            <input type="text" value={name.value} 
+            style={{borderRadius:20,paddingLeft:13}}
+            placeholder="Username"
+            // onChange={(text) => {setName(text)}}
+            onChange={handleChange}
+            />
+          </label>
+          <br/>
+          <label>
+            <input type="password" value={name.value} 
+            style={{borderRadius:20,paddingLeft:13}}
+            placeholder="password"
+            // onChange={(text) => {setName(text)}}
+            onChange={handleChange}
+            />
+            
+          </label>
           
-        </label>
-        <label>
-          <input type="password" value={name.value} 
-          style={{borderRadius:20,paddingLeft:13}}
-          placeholder="password"
-          // onChange={(text) => {setName(text)}}
-          onChange={handleChange}
-          />
           
-        </label>
-        
-        
-      </form>
-      </center>
-      <button onClick={()=>{checking()}}>Log in</button>
+        </form>
+        <button onClick={()=>{checking()}} style={{borderRadius:20,backgroundColor:'lightblue'}} ><h3 style={{color:'white'}}>Log in</h3></button>
+        </center>
+      </div>
+
+      <div style={{background:'white', float:'right',borderTopRightRadius:15,borderBottomRightRadius:15}}>
+        <img src={'https://w.wallhaven.cc/full/6k/wallhaven-6kw5z6.jpg'} alt="Logo" style={{width:550,height:550,borderTopRightRadius:20,borderBottomRightRadius:20}}/>
+      </div>
+      </Row>
       </header>
-      
+
       <Modal
         aria-labelledby="modal-label"
         show={show}          
@@ -89,7 +97,7 @@ function App() {
           </p>
           
           <div className="d-flex justify-content-end">
-            <Button onClick={() => setShow(false)} variant="outline-success">
+            <Button onClick={() => setShow(false)} variant="outline-success" style={{borderRadius:10}}>
               Close me ya'll!
             </Button>
           </div>
@@ -113,9 +121,21 @@ function App() {
           </div>
         </Alert>
       </Modal>
-      
     </div>
   );
 }
+
+const styles=({
+  container:{
+    width: 300,
+    height: 100,
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    marginLeft: -150, /* Half of width */
+    marginTop: -50,
+  }
+  
+})
 
 export default App;
