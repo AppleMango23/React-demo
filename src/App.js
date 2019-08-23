@@ -2,6 +2,8 @@ import React, {useState}from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button,NavDropdown,Nav,Form,FormControl, Navbar,Alert,Modal, Row} from 'react-bootstrap'
+import { MDBInput } from "mdbreact";
+import Scrollable from 'hide-scrollbar-react';
 
 function App() {
   const [name, setName] = useState('');
@@ -23,8 +25,18 @@ function App() {
     
   }
 
+  function functionTesting(){
+    const numbers = [1, 2, 3, 4, 5];
+    const listItems = numbers.map((number) =>
+      <li>{number}</li>
+    );
+
+    console.log( listItems);
+  }
+
   return (  
-    <div style={{backgroundColor:'white',justifyContent:'center',}}>
+    <div style={{backgroundColor:'white',justifyContent:'center',alignContent:'center',overflowY: 'visible',}}>
+   
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,32 +63,36 @@ function App() {
         <div style={{ backgroundColor:'white',alignItems:'center', borderTopLeftRadius:8,borderBottomLeftRadius:8, padding:5, paddingBottom:20,float:'left' ,width:450}}>
           <center>
           <img src={logo} className="App-logo" alt="logo" style={{marginLeft:-20}}/>
+          </center>
           <form onSubmit={checking} style={{justifyContent:'center', alignItems:'center', alignContent:'center',alignSelf:'center'}}>
-          <label>
-            <input type="text" value={name.value} 
+          <div style={{paddingLeft:5}} className="grey-text">
+          <MDBInput label="Username" icon="user" onChange={handleChange} />
+          <MDBInput label="Password" icon="lock" type="password" onChange={handleChange} />
+          </div>
+            {/* <input type="text" value={name.value} 
             style={{borderRadius:20,paddingLeft:13}}
             placeholder="Username"
             // onChange={(text) => {setName(text)}}
             onChange={handleChange}
-            />
-          </label>
-          <br/>
-          <label>
-            <input type="password" value={name.value} 
+            /> */}
+          
+            {/* <input type="password" value={name.value} 
             style={{borderRadius:20,paddingLeft:13}}
             placeholder="password"
             // onChange={(text) => {setName(text)}}
             onChange={handleChange}
-            />
-          </label>     
+            /> */}
+
         </form>
+        <center>
         <Button variant="outline-success" style={{padding:13,paddingLeft:'40%',paddingRight:'40%',fontSize:18,marginTop:20}} onClick={()=>{checking()}} >Login</Button>
-        {/* <button onClick={()=>{checking()}} style={{borderRadius:20,backgroundColor:'lightblue'}} ><h3 style={{color:'white'}}>Log in</h3></button> */}
+        {/* <Button variant="outline-success" style={{padding:13,paddingLeft:'40%',paddingRight:'40%',fontSize:18,marginTop:5}} onClick={()=>{functionTesting()}} >Test</Button> */}
         </center>
+        
       </div>
 
       <div style={{background:'white', float:'right',borderTopRightRadius:8,borderBottomRightRadius:8}}>
-        <img src={'https://w.wallhaven.cc/full/6k/wallhaven-6kw5z6.jpg'} alt="Logo" style={{width:550,height:550,borderTopRightRadius:8,borderBottomRightRadius:20}}/>
+        <img src={'https://w.wallhaven.cc/full/6k/wallhaven-6kw5z6.jpg'} alt="Logo" style={{width:550,height:580,borderTopRightRadius:8,borderBottomRightRadius:20}}/>
       </div>
       </Row>
       </header>
@@ -115,7 +131,12 @@ function App() {
           </div>
         </Alert>
       </Modal>
+      {/* </ScrollLock> */}
+      
+    
     </div>
+
+    
   );
 }
 
