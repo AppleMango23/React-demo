@@ -10,4 +10,6 @@ There will be a nice and cool interface on the login screen.<br>
 - Lock the scroll on first screen
 
 # Done
-- Photo on side(done)
+- Photo on side(done)<br>
+- Background photo(done)<br>
+- Header(done)<br>
