@@ -22,9 +22,6 @@ function App() {
     }
     
   }
-  function AlertOpen() {
-    setShow(true)
-  }
 
   return (  
     <div style={{backgroundColor:'white',justifyContent:'center',}}>
@@ -49,9 +46,9 @@ function App() {
         </Form>
       </Navbar.Collapse>
     </Navbar>
-      <header className="App-header" style={{flexDirection:'row'}}>
+      <header className="App-header" style={{backgroundImage: "url(" + "https://w.wallhaven.cc/full/96/wallhaven-9697dk.png" + ")",backgroundSize: 'cover',overflow: 'hidden',}}>
       <Row>
-        <div style={{ backgroundColor:'white',alignItems:'center', borderTopLeftRadius:15,borderBottomLeftRadius:15, padding:5, paddingBottom:20,float:'left' ,width:450}}>
+        <div style={{ backgroundColor:'white',alignItems:'center', borderTopLeftRadius:8,borderBottomLeftRadius:8, padding:5, paddingBottom:20,float:'left' ,width:450}}>
           <center>
           <img src={logo} className="App-logo" alt="logo" style={{marginLeft:-20}}/>
           <form onSubmit={checking} style={{justifyContent:'center', alignItems:'center', alignContent:'center',alignSelf:'center'}}>
@@ -71,17 +68,15 @@ function App() {
             // onChange={(text) => {setName(text)}}
             onChange={handleChange}
             />
-            
-          </label>
-          
-          
+          </label>     
         </form>
-        <button onClick={()=>{checking()}} style={{borderRadius:20,backgroundColor:'lightblue'}} ><h3 style={{color:'white'}}>Log in</h3></button>
+        <Button variant="outline-success" style={{padding:13,paddingLeft:'40%',paddingRight:'40%',fontSize:18,marginTop:20}} onClick={()=>{checking()}} >Login</Button>
+        {/* <button onClick={()=>{checking()}} style={{borderRadius:20,backgroundColor:'lightblue'}} ><h3 style={{color:'white'}}>Log in</h3></button> */}
         </center>
       </div>
 
-      <div style={{background:'white', float:'right',borderTopRightRadius:15,borderBottomRightRadius:15}}>
-        <img src={'https://w.wallhaven.cc/full/6k/wallhaven-6kw5z6.jpg'} alt="Logo" style={{width:550,height:550,borderTopRightRadius:20,borderBottomRightRadius:20}}/>
+      <div style={{background:'white', float:'right',borderTopRightRadius:8,borderBottomRightRadius:8}}>
+        <img src={'https://w.wallhaven.cc/full/6k/wallhaven-6kw5z6.jpg'} alt="Logo" style={{width:550,height:550,borderTopRightRadius:8,borderBottomRightRadius:20}}/>
       </div>
       </Row>
       </header>
@@ -103,7 +98,6 @@ function App() {
           </div>
         </Alert>
       </Modal>
-
       <Modal
         aria-labelledby="modal-label"
         show={showError}          
@@ -134,7 +128,8 @@ const styles=({
     top: '50%',
     marginLeft: -150, /* Half of width */
     marginTop: -50,
-  }
+  },
+
   
 })
 
