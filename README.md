@@ -7,6 +7,7 @@ There will be a nice and cool interface on the login screen.<br>
 - Able to log in using sms.<br>
 - Able to log in using email verification.<br>
 - Shopping list able to choose.<br>
+- Lock the scroll on first screen
 
 # Done
 - Photo on side(done)
